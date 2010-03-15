@@ -1,5 +1,5 @@
 %define upstream_name    DateTime-Format-Builder
-%define upstream_version 0.7901
+%define upstream_version 0.80
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
