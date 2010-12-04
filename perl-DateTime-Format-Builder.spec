@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Create DateTime parser classes and objects
 License:    GPL+ or Artistic
@@ -18,6 +18,8 @@ BuildRequires: perl(Module::Build)
 BuildRequires: perl(Params::Validate)
 BuildRequires: perl(Task::Weaken)
 BuildRequires: perl(Module::Build::Compat)
+# This dependency is missing so we specify it explicitly.
+Requires: perl(Class::Factory::Util)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
