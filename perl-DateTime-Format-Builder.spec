@@ -1,27 +1,27 @@
 %define upstream_name    DateTime-Format-Builder
 %define upstream_version 0.80
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	4
 
-Summary:    Create DateTime parser classes and objects
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/DateTime/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Create DateTime parser classes and objects
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/DateTime/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Class::Factory::Util)
-BuildRequires: perl(DateTime)
-BuildRequires: perl(DateTime::Format::Strptime)
-BuildRequires: perl(Module::Build)
-BuildRequires: perl(Params::Validate)
-BuildRequires: perl(Task::Weaken)
-BuildRequires: perl(Module::Build::Compat)
+BuildRequires:	perl-devel
+BuildRequires:	perl(Class::Factory::Util)
+BuildRequires:	perl(DateTime)
+BuildRequires:	perl(DateTime::Format::Strptime)
+BuildRequires:	perl(Module::Build)
+BuildRequires:	perl(Params::Validate)
+BuildRequires:	perl(Task::Weaken)
+BuildRequires:	perl(Module::Build::Compat)
 # This dependency is missing so we specify it explicitly.
-Requires: perl(Class::Factory::Util)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+Requires:	perl(Class::Factory::Util)
+BuildArch:	noarch
 
 %description
 This module understands the formats used by MySQL for its DATE, DATETIME,
@@ -33,24 +33,37 @@ produce a string representing it in the MySQL format.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.800.0-3mdv2011.0
++ Revision: 656905
+- rebuild for updated spec-helper
+
+* Sat Dec 04 2010 Shlomi Fish <shlomif@mandriva.org> 0.800.0-2mdv2011.0
++ Revision: 609257
+- Add Requires for Class::Factory::Util (it was missing for some reason)
+
+* Mon Mar 15 2010 Jérôme Quelin <jquelin@mandriva.org> 0.800.0-1mdv2011.0
++ Revision: 519950
+- update to 0.80
+
+* Sun Nov 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.790.100-1mdv2010.1
++ Revision: 471226
+- import perl-DateTime-Format-Builder
 
 
+* Sun Nov 29 2009 cpan2dist 0.7901-1mdv
+- initial mdv release, generated with cpan2dist
