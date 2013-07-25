@@ -1,2 +1,4 @@
+removed_sources:
+  DateTime-Format-Builder-0.80.tar.gz: 5c0420118aedc68b9dfbafe4c78a993899c31005
 sources:
-  "DateTime-Format-Builder-0.80.tar.gz": 5c0420118aedc68b9dfbafe4c78a993899c31005
+  DateTime-Format-Builder-0.81.tar.gz: 0df6fb5e9cd15c7925d830c516ce8d9f1290ad35
