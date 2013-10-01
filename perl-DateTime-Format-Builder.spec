@@ -1,15 +1,15 @@
 %define upstream_name    DateTime-Format-Builder
-%define upstream_version 0.80
+%define upstream_version 0.81
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	1
 
 Summary:	Create DateTime parser classes and objects
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/DateTime/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/DateTime/DateTime-Format-Builder-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Class::Factory::Util)
@@ -67,3 +67,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sun Nov 29 2009 cpan2dist 0.7901-1mdv
 - initial mdv release, generated with cpan2dist
+
