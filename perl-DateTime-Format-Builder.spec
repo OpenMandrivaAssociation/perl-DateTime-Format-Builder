@@ -1,15 +1,15 @@
 %define upstream_name    DateTime-Format-Builder
-%define upstream_version 0.81
+%define upstream_version 0.83
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	12
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Create DateTime parser classes and objects
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/DateTime/DateTime-Format-Builder-%{upstream_version}.tar.gz
+Url:		https://github.com/houseabsolute/DateTime-Format-Builder
+Source0:	https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
