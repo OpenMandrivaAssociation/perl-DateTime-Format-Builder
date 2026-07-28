@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%{upstream_version}
-Release:	1
+Release:	2
 
 Summary:	Create DateTime parser classes and objects
 License:	GPL+ or Artistic
@@ -44,7 +44,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %makeinstall_std
 
 %files
-%doc Changes README
+%doc Changes README.md
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 
